@@ -1,0 +1,2 @@
+###endpointslice###
+kubectl get endpointslices
