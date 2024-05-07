@@ -80,3 +80,31 @@ docker container ls
 kubectl apply -f /home/marcelotse/tse/kubernetes2.0/kind/deployment.yaml
 
 watch 'kubectl get pods
+
+https://github.com/kubernetes-sigs/kind/releases
+
+kind create cluster --name tse --config /home/marcelotse/tse/kubernetes2.0/kind/tse-config2.yaml
+
+kind create cluster --name tse --config /home/marcelotse/tse/kubernetes2.0/kind/tse-config2.yaml
+
+kind create cluster --name tse --config /home/marcelotse/tse/kubernetes2.0/kind/tse-config3.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.4/manifests/calico.yaml 
+
+kubectl get pods -A 
+
+kubectl get nodes -o wide
+
+docker build -t jmarcelotse/conversao-temperatura-kind:v1 --push .
+
+docker image ls
+
+kubectl apply -f /home/marcelotse/tse/kubernetes2.0/aplicacao1/deployment.yaml
+
+ kubectl get pods
+
+kubectl delete -f /home/marcelotse/tse/kubernetes2.0/aplicacao1/deployment.yaml
+
+kind load --name tse docker-image jmarcelotse/conversao-temperatura-kind:v1
+
+kubectl apply  -f /home/marcelotse/tse/kubernetes2.0/aplicacao1/deployment.yaml
